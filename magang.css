@@ -1,10 +1,9 @@
 :root {
     --primary: #d44e25;
-    --bg: #f7f2f2;
+    --bg: #fff;
 }
 
 * {
-    fo
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,7 +15,7 @@
 body {
     font-family: Poppins, sans-serif;
     background-color: var(--bg);
-    color: #fff;
+    overflow-x: hidden;
 }
 
 html {
@@ -27,9 +26,9 @@ html {
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     padding: 1.4rem 7%;
-    background-color: rgba(198, 78, 26, 0.8);
+    background-color: rgba(244, 79, 9, 0.8);
     border-bottom: 1px solid #3f2f1f;
     position: fixed;
     top: 0;
@@ -40,17 +39,13 @@ html {
 
 .navbar .navbar-logo {
     display: block;
-    width: 50px;
-    /* Lebar logo sesuai kebutuhan */
+    width: 70px;
     height: auto;
-        /* Menjaga rasio aspek asli */
 }
 
-/* Tambahkan gambar logo */
 .navbar.navbar-logo img {
     display: block;
     width: 100%;
-    /* Pastikan gambar logo penuh lebar */
     height: auto;
 }
 
@@ -58,7 +53,7 @@ html {
 .navbar .navbar-nav a {
     color: #fff;
     display: inline-block;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin: 0 1rem;
 }
 
@@ -97,11 +92,14 @@ html {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-image: url('img/gambar-header.jpg');
+    background-image: url('img/hero.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
+    transform: rotate(-5deg);
+    margin-left: -100%;
+    margin-top: -20%;
 }
 
 .hero::after {
@@ -118,94 +116,33 @@ html {
 .hero .content {
     padding: 1.4rem 7%;
     max-width: 60rem;
-}
-
-.hero .content h1 {
-    font-size: 5em;
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-    line-height: 1.2r;
-}
-
-.hero .content h1 span {
-    color: var(--primary);
-}
-
-.hero .content p {
-    font-size: 1.6rem;
-    margin-top: 1rem;
-    line-height: 1.4;
-    font-weight: 100;
-    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-    mix-blend-mode: difference;
-}
-
-.hero .content .cta {
-    margin-top: 1rem;
-    display: inline-block;
-    padding: 1rem 3rem;
-    font-size: 1.4rem;
-    color: #fff;
-    background-color: var(--primary);
-    border-radius: 0.5rem;
-    box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-}
-
-/* About Section */
-.about,
-.menu,
-.contact {
-    padding: 8rem 7% 1.4rem;
-}
-
-.about h2,
-.menu h2,
-.contact h2 {
     text-align: center;
-    font-size: 2.6rem;
-    margin-bottom: 3rem;
-}
-
-.about h2 span,
-.menu h2 span,
-.contact h2 span {
-    color: var(--primary);
-}
-
-.about .row {
-    display: flex;
-
-}
-
-.about .row .about-img {
-    flex: 1 1 45rem;
-}
-
-.about .row .about-img img {
-    width: 100%;
-}
-
-.about .row .content {
-    flex: 1 1 35rem;
-    padding: 0 1rem;
-}
-
-.about .row .content h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.about .row .content p {
-    margin-bottom: 0.8rem;
-    font-size: 1.4rem;
-    font-weight: 100;
-    line-height: 1.6;
 }
 
 /* Menu Section */
 .menu h2,
 .contact h2 {
     margin-bottom: 1rem;
+}
+
+.menu h1{
+    font-size: 5em;
+        color: #151313;
+        text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+        line-height: 1.2r;
+        text-align: center;
+        padding-top: 50px;
+}
+
+.maenu p{
+    font-size: 1.6rem;
+        margin-top: 1rem;
+        line-height: 1.4;
+        font-weight: 100;
+        text-shadow: 3px 3px 3px rgba(241, 241, 248, 0.5);
+        mix-blend-mode: difference;
+        text-align: center;
+        color: #151414;
 }
 
 .menu p,
@@ -227,66 +164,94 @@ html {
 .menu .row .menu-card {
     text-align: center;
     padding-bottom: 4rem;
+    width: 22%;
+        /* Atur lebar menu-card agar muat 4 gambar dalam satu baris */
+    margin: 1%;
 }
 
 .menu .row .menu-card img {
-    border-radius: 50%;
+    border-radius: 0%;
     width: 80%;
 }
 
 .menu .row .menu-card .menu-card-title {
     margin-top: 1rem auto 0.5rem;
 }
-
-
-/* Contack Section */
-.contact .row {
+/* Kustomisasi CSS untuk pagination */
+.custom-pagination {
     display: flex;
-    margin-top: 2rem;
-    background-color: #222;
-    /* flex-wrap: wrap; */
+    justify-content: center;
+    list-style: none;
+    padding: 0;
 }
 
-.contact .row .map {
-    flex: 1 1 45rem;
-    width: 100%;
-    object-fit: cover;
+.custom-pagination li {
+    margin: 0 5px;
 }
 
-.contact .row form {
-    flex: 1 1 45rem;
-    padding: 5rem 2rem;
-    text-align: center;
-
+.custom-pagination a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
-.contact .row form .input-group {
-    display: flex;
-    align-items: center;
-    margin-top: 2rem;
-    background-color: var(--bg);
-    border: 1px solid #eee;
-    padding-left: 2rem;
+.custom-pagination a:hover {
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
 }
 
-.contact .row form .input-group input {
-    width: 100%;
-    padding: 2rem;
-    font-size: 1.7rem;
-    background: none;
+.custom-pagination .active a {
+    background-color: #007bff;
+    border: 1px solid #007bff;
     color: #fff;
 }
 
-.contact .row form .btn {
-    margin-top: 3rem;
-    display: inline-block;
-    padding: 1rem 3rem;
-    font-size: 1.7rem;
-    color: #fff;
-    background-color: var(--primary);
-    cursor: pointer;
-}
+ .sorting-dropdown {
+     position: absolute;
+     top: 90%;
+     right: 90%;
+     display: inline-block;
+ }
 
+ .sorting-button {
+     background-color: #555;
+     color: #fff;
+     border: none;
+     padding: 10px 20px;
+     cursor: pointer;
+     font-size: 16px;
+ }
+
+ .sorting-dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #333;
+     min-width: 160px;
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+     z-index: 1;
+    text-align: right;
+ }
+
+ .sorting-dropdown-content a {
+     color: #fff;
+     padding: 12px 16px;
+     display: block;
+     text-decoration: none;
+ }
+
+ .sorting-dropdown-content a:hover {
+     background-color: #555;
+ }
+
+ .sorting-dropdown:hover .sorting-dropdown-content {
+     display: block;
+ }
 
 /* footer */
 footer {
@@ -357,7 +322,7 @@ footer .credit a {
         position: absolute;
         top: 100%;
         right: -100%;
-        background-color: #fff;
+        background-color: #231f1f;
         width: 30rem;
         height: 100vh;
         transition: 0.3s;
